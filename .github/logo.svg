@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e2840;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a14;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="spark" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffd93d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="140" rx="16" fill="url(#bg)" />
+
+  <!-- Border -->
+  <rect x="1" y="1" width="598" height="138" rx="15" fill="none" stroke="#2a3550" stroke-width="1.5" />
+
+  <!-- Monitor icon -->
+  <g transform="translate(36, 30)">
+    <!-- Screen outline -->
+    <rect x="0" y="0" width="56" height="40" rx="4" fill="none" stroke="url(#accent)" stroke-width="2.5" />
+    <!-- Stand -->
+    <line x1="28" y1="40" x2="28" y2="52" stroke="url(#accent)" stroke-width="2" />
+    <line x1="16" y1="52" x2="40" y2="52" stroke="url(#accent)" stroke-width="2.5" stroke-linecap="round" />
+    <!-- Sparkline inside screen -->
+    <polyline points="6,30 12,26 18,28 24,18 30,22 36,12 42,16 50,8" fill="none" stroke="url(#spark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Horizontal baseline -->
+    <line x1="6" y1="34" x2="50" y2="34" stroke="#4ecdc4" stroke-width="1" opacity="0.3" />
+  </g>
+
+  <!-- cxtop text -->
+  <text x="112" y="82" font-family="'SF Mono', 'Fira Code', 'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="52" font-weight="700" letter-spacing="2">
+    <tspan fill="url(#accent)">cx</tspan><tspan fill="#e8e8e8">top</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="114" y="108" font-family="'SF Mono', 'Fira Code', 'JetBrains Mono', Consolas, monospace" font-size="14" fill="#6a7a9a" letter-spacing="3">
+    SYSTEM MONITOR
+  </text>
+
+  <!-- Terminal cursor blink -->
+  <rect x="340" y="62" width="3" height="28" fill="#4ecdc4" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0;0.7" dur="1.2s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Decorative dots (like terminal status) -->
+  <circle cx="540" cy="40" r="4" fill="#ff5f56" opacity="0.8" />
+  <circle cx="556" cy="40" r="4" fill="#ffbd2e" opacity="0.8" />
+  <circle cx="572" cy="40" r="4" fill="#27c93f" opacity="0.8" />
+</svg>
