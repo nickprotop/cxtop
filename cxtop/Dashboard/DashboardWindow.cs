@@ -67,6 +67,11 @@ internal sealed class DashboardWindow
                     pt.CycleSortMode();
                     e.Handled = true;
                 }
+                if (_tabs.ElementAtOrDefault(_tabControl?.ActiveTabIndex ?? -1) is StorageTab st
+                    && st.HandleKey(e.KeyInfo.Key))
+                {
+                    e.Handled = true;
+                }
             })
             .Build();
 
@@ -253,6 +258,9 @@ internal sealed class DashboardWindow
 
         if (tab is ProcessTab)
             return $"[{accent}]Tab[/][{muted}] region[/] [{accent}]Enter[/][{muted}] select[/] [{accent}]S[/][{muted}] sort[/] [{accent}]/[/][{muted}] search[/] [{accent}]F1-F6[/][{muted}] tabs[/] [{accent}]F10[/][{muted}] exit[/]";
+
+        if (tab is StorageTab)
+            return $"[{accent}]↑↓[/][{muted}] select disk[/] [{accent}]F1-F6[/][{muted}] tabs[/] [{accent}]F10/ESC[/][{muted}] exit[/]";
 
         return $"[{accent}]F1-F6[/][{muted}] tabs[/] [{accent}]F10/ESC[/][{muted}] exit[/]";
     }
