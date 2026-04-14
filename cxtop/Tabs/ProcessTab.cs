@@ -216,7 +216,7 @@ internal sealed class ProcessTab : ITab
 
     #region Post-Build Setup
 
-    public void ApplyDetailPanelColors(Window mainWindow)
+    public void ApplyDetailPanelColors(Window mainWindow, Func<bool> isActive)
     {
         var detailToolbar = mainWindow.FindControl<ToolbarControl>("detailToolbar");
         if (detailToolbar != null)
@@ -235,6 +235,9 @@ internal sealed class ProcessTab : ITab
         // Apply bottom-fade effect on the process list
         mainWindow.PostBufferPaint += (buffer, dirty, clip) =>
         {
+            if (!isActive())
+                return;
+
             var processList = mainWindow.FindControl<ListControl>("processList");
             if (processList == null || processList.ActualWidth <= 0 || processList.ActualHeight <= 0)
                 return;

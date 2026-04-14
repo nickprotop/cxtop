@@ -192,8 +192,9 @@ internal sealed class DashboardWindow
         };
         mainWindow.AddControl(_tabControl);
 
-        if (_tabs.FirstOrDefault(t => t is ProcessTab) is ProcessTab processTab)
-            processTab.ApplyDetailPanelColors(mainWindow);
+        int processTabIndex = _tabs.FindIndex(t => t is ProcessTab);
+        if (processTabIndex >= 0 && _tabs[processTabIndex] is ProcessTab processTab)
+            processTab.ApplyDetailPanelColors(mainWindow, () => _tabControl?.ActiveTabIndex == processTabIndex);
     }
 
     private bool HandleTabShortcut(ConsoleKey key)
