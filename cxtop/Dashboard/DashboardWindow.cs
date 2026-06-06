@@ -278,13 +278,19 @@ internal sealed class DashboardWindow
         {
             try
             {
+                // Read the /proc snapshot off the UI thread, then marshal all
+                // control mutations onto the UI thread to avoid data races with
+                // the render loop (WithAsyncWindowThread runs off-thread).
                 var snapshot = _stats.ReadSnapshot();
 
-                UpdateClock(window);
+                _windowSystem.EnqueueOnUIThread(() =>
+                {
+                    UpdateClock(window);
 
-                UpdateActiveTab(snapshot);
-                UpdateBottomStats(window, snapshot);
-                UpdateActionButton(window, snapshot);
+                    UpdateActiveTab(snapshot);
+                    UpdateBottomStats(window, snapshot);
+                    UpdateActionButton(window, snapshot);
+                });
             }
             catch (Exception ex)
             {

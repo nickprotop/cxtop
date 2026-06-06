@@ -27,7 +27,8 @@ internal class Program
                 new NetConsoleDriver(RenderMode.Buffer),
                 options: new ConsoleWindowSystemOptions(
                     ShowTopPanel: false,
-                    ShowBottomPanel: false));
+                    ShowBottomPanel: false,
+                    InstallSynchronizationContext: true));
 
             windowSystem.PanelStateService.TopStatus =
                 $"cxtop - System Monitor ({SystemStatsFactory.GetPlatformName()})";
