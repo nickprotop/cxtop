@@ -40,7 +40,6 @@ internal sealed class StorageTab : BaseResponsiveTab
                 .WithVerticalAlignment(VerticalAlignment.Fill)
                 .WithAlignment(HorizontalAlignment.Stretch)
                 .WithMargin(1, 0, 1, 1)
-                .Visible(false)
                 .Column(col =>
                 {
                     col.Width(UIConstants.FixedTextColumnWidth);
@@ -76,7 +75,6 @@ internal sealed class StorageTab : BaseResponsiveTab
                 .WithVerticalAlignment(VerticalAlignment.Fill)
                 .WithAlignment(HorizontalAlignment.Stretch)
                 .WithMargin(1, 0, 1, 1)
-                .Visible(false)
                 .Column(col =>
                 {
                     var scrollPanel = BuildScrollablePanel();

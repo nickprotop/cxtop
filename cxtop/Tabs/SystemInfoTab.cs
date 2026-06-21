@@ -97,8 +97,7 @@ internal sealed class SystemInfoTab : ITab
             .WithName(PanelControlName)
             .WithVerticalAlignment(VerticalAlignment.Fill)
             .WithAlignment(HorizontalAlignment.Stretch)
-            .WithMargin(0, 0, 0, 0)
-            .Visible(false);
+            .WithMargin(0, 0, 0, 0);
 
         switch (_currentLayout)
         {

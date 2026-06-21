@@ -89,7 +89,6 @@ internal abstract class BaseResponsiveTab : ITab
             .WithVerticalAlignment(VerticalAlignment.Fill)
             .WithAlignment(HorizontalAlignment.Stretch)
             .WithMargin(1, 0, 1, 1)
-            .Visible(false)
             .Column(col =>
             {
                 col.Width(UIConstants.FixedTextColumnWidth);
@@ -129,7 +128,6 @@ internal abstract class BaseResponsiveTab : ITab
             .WithVerticalAlignment(VerticalAlignment.Fill)
             .WithAlignment(HorizontalAlignment.Stretch)
             .WithMargin(1, 0, 1, 1)
-            .Visible(false)
             .Column(col =>
             {
                 var scrollPanel = BuildScrollablePanel();
