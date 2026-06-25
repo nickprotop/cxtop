@@ -249,7 +249,6 @@ internal sealed class SystemInfoTab : ITab
 
         var window = _windowSystem.Windows.Values.FirstOrDefault();
         window?.ForceRebuildLayout();
-        window?.Invalidate(true);
     }
 
     private void BuildWideTallColumnsRebuild(HorizontalGridControl grid, SystemSnapshot snapshot)

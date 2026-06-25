@@ -440,7 +440,6 @@ internal sealed class StorageTab : BaseResponsiveTab
         BuildGraphsContent(rightPanel, snapshot);
 
         FindMainWindow()?.ForceRebuildLayout();
-        FindMainWindow()?.Invalidate(true);
     }
 
     #endregion
@@ -585,7 +584,6 @@ internal sealed class StorageTab : BaseResponsiveTab
         }
 
         FindMainWindow()?.ForceRebuildLayout();
-        FindMainWindow()?.Invalidate(true);
     }
 
     #endregion

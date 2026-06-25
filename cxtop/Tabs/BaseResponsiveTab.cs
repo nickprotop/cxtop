@@ -160,7 +160,6 @@ internal abstract class BaseResponsiveTab : ITab
             BuildNarrowColumns(grid, snapshot);
 
         FindMainWindow()?.ForceRebuildLayout();
-        FindMainWindow()?.Invalidate(true);
     }
 
     private void BuildWideColumns(HorizontalGridControl grid, SystemSnapshot snapshot)

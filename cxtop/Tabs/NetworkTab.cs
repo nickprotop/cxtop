@@ -459,7 +459,6 @@ internal sealed class NetworkTab : BaseResponsiveTab
         }
 
         FindMainWindow()?.ForceRebuildLayout();
-        FindMainWindow()?.Invalidate(true);
     }
 
     #endregion

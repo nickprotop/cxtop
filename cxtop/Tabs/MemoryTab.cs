@@ -456,7 +456,6 @@ internal sealed class MemoryTab : BaseResponsiveTab
         }
 
         FindMainWindow()?.ForceRebuildLayout();
-        FindMainWindow()?.Invalidate(true);
     }
 
     #endregion
